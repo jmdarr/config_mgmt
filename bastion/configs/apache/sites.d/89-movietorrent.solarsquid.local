@@ -1,0 +1,17 @@
+Listen *:89
+<VirtualHost *:89>
+    ServerName      movietorrent.solarsquid.local
+    ServerAlias     www.movietorrent.solarsquid.local
+    ErrorLog        /var/log/httpd/movietorrent.solarsquid.local.error_log
+    CustomLog       /var/log/httpd/movietorrent.solarsquid.local.access_log combined
+
+    <Proxy *>
+        Order deny,allow
+        Allow from all
+    </Proxy>
+
+    ProxyRequests       Off
+    ProxyPreserveHost   On
+    ProxyPass           / http://192.168.0.19:9091/
+    ProxyPassReverse    / http://192.168.0.19:9091/
+</VirtualHost>

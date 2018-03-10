@@ -1,0 +1,10 @@
+Listen *:82
+<VirtualHost *:82>
+    ServerName      home.solarsquid.local
+    ServerAlias     www.home.solarsquid.local
+    DocumentRoot    /home/jdarr/home.solarsquid.local/html
+    ErrorLog        /var/log/httpd/home.solarsquid.local.error_log
+    CustomLog       /var/log/httpd/home.solarsquid.local.access_log combined
+
+    Options +Indexes
+</VirtualHost>

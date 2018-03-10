@@ -1,0 +1,22 @@
+Listen *:87
+<VirtualHost *:87>
+    ServerName      plex.solarsquid.local
+    ServerAlias     www.plex.solarsquid.local
+    ErrorLog        /var/log/httpd/plex.solarsquid.local.error_log
+    CustomLog       /var/log/httpd/plex.solarsquid.local.access_log combined
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/web
+    RewriteCond %{HTTP:X-Plex-Device} ^$
+    RewriteRule ^/$ /web/$1 [R,L]
+
+    <Proxy *>
+        Order deny,allow
+        Allow from all
+    </Proxy>
+
+    ProxyRequests       On
+    ProxyPreserveHost   On
+    ProxyPass           / http://192.168.0.15:32400/
+    ProxyPassReverse    / http://192.168.0.15:32400/
+</VirtualHost>

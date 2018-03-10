@@ -1,0 +1,17 @@
+Listen *:84
+<VirtualHost *:84>
+    ServerName      files.solarsquid.local
+    ServerAlias     www.files.solarsquid.local
+    DocumentRoot    /mnt/nas
+    ErrorLog        /var/log/httpd/files.solarsquid.local.error_log
+    CustomLog       /var/log/httpd/files.solarsquid.local.access_log combined
+
+    <Directory /mnt/nas>
+        Options +Indexes
+    </Directory>
+
+    <IfModule mod_autoindex.c>
+        IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=*
+        IndexOrderDefault Ascending Name 
+    </IfModule>
+</VirtualHost>

@@ -1,0 +1,49 @@
+$TTL 3600
+@   IN	SOA ns.solarsquid.local root.solarsquid.local (
+        2018010101      ; Serial
+              3600      ; Refresh
+              3600      ; Rertry
+              3600      ; Expire
+              3600      ; Negative Cache TTL
+);
+@           IN  NS  ns.solarsquid.local.
+
+router                IN  A   192.168.0.1
+bastion-vm            IN  A   192.168.0.2
+ns                    IN  A   192.168.0.3
+;                             192.168.0.4
+;                             192.168.0.5
+;                             192.168.0.6
+;                             192.168.0.7
+;                             192.168.0.8
+;                             192.168.0.9
+nas                   IN  A   192.168.0.10
+;                     IN  A   192.168.0.11
+vmhost                IN  A   192.168.0.12
+nas-ipmi              IN  A   192.168.0.13
+;                             192.168.0.14
+plex-vm               IN  A   192.168.0.15
+sonarr-vm             IN  A   192.168.0.16
+tv-transmission-vm    IN  A   192.168.0.17
+couchpotato-vm        IN  A   192.168.0.18
+movie-transmission-vm IN  A   192.168.0.19
+transmission-vm       IN  A   192.168.0.20
+;                             192.168.0.21
+waddles               IN  A   192.168.0.22
+gompers               IN  A   192.168.0.23
+; DHCP
+;                     IN  A   192.168.0.100
+; ...
+;                     IN  A   192.168.0.200
+wap                   IN  A   192.168.0.254
+
+bastion               IN  CNAME bastion-vm.solarsquid.local.
+dns                   IN  CNAME ns.solarsquid.local.
+files                 IN  CNAME bastion-vm.solarsquid.local.
+home                  IN  CNAME bastion-vm.solarsquid.local.
+movies                IN  CNAME bastion-vm.solarsquid.local.
+plex                  IN  CNAME bastion-vm.solarsquid.local.
+tv                    IN  CNAME bastion-vm.solarsquid.local.
+tvtorrent             IN  CNAME bastion-vm.solarsquid.local.
+movietorrent          IN  CNAME bastion-vm.solarsquid.local.
+torrent               IN  CNAME bastion-vm.solarsquid.local.

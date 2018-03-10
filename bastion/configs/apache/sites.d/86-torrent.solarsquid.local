@@ -1,0 +1,17 @@
+Listen *:86
+<VirtualHost *:86>
+    ServerName      torrent.solarsquid.local
+    ServerAlias     www.torrent.solarsquid.local
+    ErrorLog        /var/log/httpd/torrent.solarsquid.local.error_log
+    CustomLog       /var/log/httpd/torrent.solarsquid.local.access_log combined
+
+    <Proxy *>
+        Order deny,allow
+        Allow from all
+    </Proxy>
+
+    ProxyRequests       Off
+    ProxyPreserveHost   On
+    ProxyPass           / http://192.168.0.20:9091/
+    ProxyPassReverse    / http://192.168.0.20:9091/
+</VirtualHost>

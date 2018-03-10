@@ -1,0 +1,17 @@
+Listen *:91
+<VirtualHost *:91>
+    ServerName      tvtorrent.solarsquid.local
+    ServerAlias     www.tvtorrent.solarsquid.local
+    ErrorLog        /var/log/httpd/tvtorrent.solarsquid.local.error_log
+    CustomLog       /var/log/httpd/tvtorrent.solarsquid.local.access_log combined
+
+    <Proxy *>
+        Order deny,allow
+        Allow from all
+    </Proxy>
+
+    ProxyRequests       Off
+    ProxyPreserveHost   On
+    ProxyPass           / http://192.168.0.17:9091/
+    ProxyPassReverse    / http://192.168.0.17:9091/
+</VirtualHost>

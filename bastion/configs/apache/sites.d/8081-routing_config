@@ -1,0 +1,24 @@
+Listen 8081
+<VirtualHost *:8081>
+    ServerName              bastion.solarsquid.com
+    ServerAlias             *.solarsquid.com *.solarsquid.local
+    CustomLog               /var/log/httpd/proxy.error_log combined
+    AddDefaultCharset       UTF-8
+
+    <IfModule mod_security2.c>
+        ###### ModSec Rule Disabling ######
+        SecRuleRemoveById 212740    # XSS attack detection and prevention
+        ###################################
+    </IfModule>
+
+    <Proxy *>
+        Order deny,allow
+        Allow from all
+    </Proxy>
+
+    ProxyPreserveHost   On
+    ProxyRequests       Off
+    ProxyVia            Off
+    ProxyPass           / http://localhost:80/
+    ProxyPassReverse    / http://localhost:80/
+</VirtualHost>
