@@ -1,13 +1,13 @@
 $TTL 3600
 @   IN	SOA ns.solarsquid.local root.solarsquid.local (
-        2018010101      ; Serial
+        2018051901      ; Serial
               3600      ; Refresh
               3600      ; Rertry
               3600      ; Expire
               3600      ; Negative Cache TTL
 );
 @           IN  NS  ns.solarsquid.local.
-
+; A RECORDS ONLY BITCHES
 router                IN  A   192.168.0.1
 bastion-vm            IN  A   192.168.0.2
 ns                    IN  A   192.168.0.3
@@ -24,9 +24,9 @@ nas-ipmi              IN  A   192.168.0.13
 ;                             192.168.0.14
 plex-vm               IN  A   192.168.0.15
 sonarr-vm             IN  A   192.168.0.16
-tv-transmission-vm    IN  A   192.168.0.17
-couchpotato-vm        IN  A   192.168.0.18
-movie-transmission-vm IN  A   192.168.0.19
+;                     IN  A   192.168.0.17
+radarr-vm             IN  A   192.168.0.18
+;                     IN  A   192.168.0.19
 transmission-vm       IN  A   192.168.0.20
 ;                             192.168.0.21
 waddles               IN  A   192.168.0.22
@@ -36,7 +36,7 @@ gompers               IN  A   192.168.0.23
 ; ...
 ;                     IN  A   192.168.0.200
 wap                   IN  A   192.168.0.254
-
+; CNAMES BELOW!
 bastion               IN  CNAME bastion-vm.solarsquid.local.
 dns                   IN  CNAME ns.solarsquid.local.
 files                 IN  CNAME bastion-vm.solarsquid.local.
