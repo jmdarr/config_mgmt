@@ -25,6 +25,6 @@ Listen *:85
 
     ProxyRequests       Off
     ProxyPreserveHost   On
-    ProxyPass           / http://192.168.0.20:9091/
-    ProxyPassReverse    / http://192.168.0.20:9091/
+    ProxyPass           / http://192.168.0.16:9091/
+    ProxyPassReverse    / http://192.168.0.16:9091/
 </VirtualHost>
