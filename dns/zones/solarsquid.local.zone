@@ -26,7 +26,7 @@ plex-vm               IN  A   192.168.0.15
 transmission-vm       IN  A   192.168.0.16
 sonarr-vm             IN  A   192.168.0.17
 tvtorrent-vm          IN  A   192.168.0.18
-;                     IN  A   192.168.0.19
+jackett               IN  A   192.168.0.19
 ;                     IN  A   192.168.0.20
 ;                             192.168.0.21
 waddles               IN  A   192.168.0.22
@@ -45,5 +45,3 @@ plex                  IN  CNAME bastion-vm.solarsquid.local.
 torrent               IN  CNAME bastion-vm.solarsquid.local.
 tv                    IN  CNAME bastion-vm.solarsquid.local.
 tvtorrent             IN  CNAME bastion-vm.solarsquid.local.
-jackett               IN  CNAME bastion-vm.solarsquid.local.
-

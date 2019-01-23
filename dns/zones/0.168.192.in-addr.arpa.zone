@@ -1,6 +1,6 @@
 $TTL 3600
 @   IN  SOA ns.solarsquid.local root.solarsquid.local (
-        2019012201      ; Serial
+        2019012202      ; Serial
               3600      ; Refresh
               3600      ; Rertry
               3600      ; Expire
@@ -25,7 +25,7 @@ $TTL 3600
 16      IN     PTR     transmission-vm.solarsquid.local.
 17      IN     PTR     sonarr-vm.solarsquid.local.
 18      IN     PTR     tvtorrent-vm.solarsquid.local.
-19      IN     PTR     19.0.168.192.in-addr.arpa.
+19      IN     PTR     jackett.solarsquid.local.
 20      IN     PTR     20.0.168.192.in-addr.arpa.
 21      IN     PTR     21.0.168.192.in-addr.arpa.
 22      IN     PTR     waddles.solarsquid.local.
