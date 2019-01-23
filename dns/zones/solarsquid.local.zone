@@ -1,6 +1,6 @@
 $TTL 3600
 @   IN  SOA ns.solarsquid.local root.solarsquid.local (
-        2019012201      ; Serial
+        2019012203      ; Serial
               3600      ; Refresh
               3600      ; Rertry
               3600      ; Expire
@@ -44,4 +44,6 @@ home                  IN  CNAME bastion-vm.solarsquid.local.
 plex                  IN  CNAME bastion-vm.solarsquid.local.
 torrent               IN  CNAME bastion-vm.solarsquid.local.
 tv                    IN  CNAME bastion-vm.solarsquid.local.
-movies                IN  CNAME bastion-vm.solarsquid.local.
+tvtorrent             IN  CNAME bastion-vm.solarsquid.local.
+jackett               IN  CNAME bastion-vm.solarsquid.local.
+
